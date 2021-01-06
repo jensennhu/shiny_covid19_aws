@@ -1,20 +1,18 @@
 # load libraries
 library(tidyverse) # data manipulation and visualization
 library(dplyr) # data manipulation
-library(lubridate) # dates
-library(htmlTable) # convert table to html
-library(data.table) # formatting 
-library(knitr) # kniting 
+#library(lubridate) # dates
+#library(data.table) # formatting 
+#library(knitr) # kniting 
 library(ggplot2) # visualizations
-library(matrixStats) # stats
-library(plotly) # visualizations
+#library(matrixStats) # stats
 library(purrr) # functional prog
-library(expss) # format labeling 
-library(zoo) # working w/time series data
+#library(expss) # format labeling 
+#library(zoo) # working w/time series data
 library(blastula) #compose and send emails 
-library(ggpubr) # setting multiple plots on one page
-library(gridExtra)
-library(TTR)
+#library(ggpubr) # setting multiple plots on one page
+#library(gridExtra)
+#library(TTR)
 
 load("loaded.Rdata")
 

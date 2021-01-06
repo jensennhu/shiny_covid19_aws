@@ -1,7 +1,7 @@
 library(shiny)
 library(dplyr)
 library(ggplot2)
-library(rsconnect)
+#library(rsconnect)
 
 load("loaded.Rdata")
 source("function.R")
