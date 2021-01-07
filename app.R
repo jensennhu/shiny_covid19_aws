@@ -3,7 +3,12 @@ library(dplyr)
 library(ggplot2)
 #library(rsconnect)
 
-load("loaded.Rdata")
+us_states <- readRDS("us_states.Rdata") 
+us_counties <- readRDS("us_counties.Rdata")
+covid_state <- readRDS("covid_state.Rdata")
+covid_county <- readRDS("covid_county.Rdata")
+international <- readRDS("international.Rdata")
+
 source("function.R")
 # source(paste0(folder, "load_data.R"))
 

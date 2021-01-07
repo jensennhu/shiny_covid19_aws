@@ -14,7 +14,11 @@ library(blastula) #compose and send emails
 #library(gridExtra)
 #library(TTR)
 
-load("loaded.Rdata")
+us_states <- readRDS("us_states.Rdata") 
+us_counties <- readRDS("us_counties.Rdata")
+covid_state <- readRDS("covid_state.Rdata")
+covid_county <- readRDS("covid_county.Rdata")
+international <- readRDS("international.Rdata")
 
 # create metric views for domestic(state, county) and international 
 state_fun <- function(place){
@@ -165,31 +169,6 @@ mavg_plot_func <- function(.data){
   #   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
   
   # grid.arrange(p1, p2, nrow = 1)
-}
-
-
-body_func <- function(test){
-  # print email body for specified state
-  print(state_set_ebody[[{test}]])  
-  # print plot of 7-day mavg of new cases
-  print(mavg_plot_func(state_set[[{test}]]))
-}
-
-
-# functions to determine days of consecutive increases/decreases
-consec_incr <- function(.data){
-  # grab vector
-  vector <- .data$sign
-  # grab row # of last sign then subtract by last row where not decreasing
-  days <- which(.data$date == max(.data$date)) - max(which(vector == -1 | vector == 0))
-  data.frame(state = unique(.data$state), days,  cases_week_mavg = .data$cases_week_mavg[.data$date == max(.data$date)] )
-}
-consec_dcr <- function(.data){
-  # grab vector
-  vector <- .data$sign
-  # grab row # of last sign then subtract by last row where not increasing
-  days <- which(.data$date == max(.data$date)) - max(which(vector == 1 | vector == 0))
-  data.frame(state = unique(.data$state), days,  cases_week_mavg = .data$cases_week_mavg[.data$date == max(.data$date)])
 }
 
 
