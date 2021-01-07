@@ -1,4 +1,5 @@
 library(shiny)
+library(shinythemes)
 library(dplyr)
 library(ggplot2)
 #library(rsconnect)
@@ -12,14 +13,13 @@ international <- readRDS("international.Rdata")
 source("function.R")
 # source(paste0(folder, "load_data.R"))
 
-# Define UI for application that draws a histogram
-ui <- fluidPage(
+ui <- fluidPage(theme = shinytheme("superhero"),
 
     # Application title
     titlePanel("Low Budget COVID-19 Dash"),
-    h4(paste0("Updated as of ", add_readable_time())),
+    h4(paste0("Updated as of ", Sys.Date())),
 
-    # Sidebar with a slider input for number of bins 
+    # Sidebar 
     sidebarLayout(
         sidebarPanel(
             selectInput("selectD", h5(strong("Select Data")),
@@ -41,7 +41,7 @@ ui <- fluidPage(
     )
 )
 
-# Define server logic required to draw a histogram
+# Define server logic required 
 server <- function(input, output) {
   output$choose_location <- renderUI({
     if(is.null(input$selectD))

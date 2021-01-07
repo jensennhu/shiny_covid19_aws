@@ -9,10 +9,10 @@ library(ggplot2) # visualizations
 library(purrr) # functional prog
 #library(expss) # format labeling 
 #library(zoo) # working w/time series data
-library(blastula) #compose and send emails 
+#library(blastula) #compose and send emails 
 #library(ggpubr) # setting multiple plots on one page
 #library(gridExtra)
-#library(TTR)
+library(TTR)
 
 us_states <- readRDS("us_states.Rdata") 
 us_counties <- readRDS("us_counties.Rdata")
