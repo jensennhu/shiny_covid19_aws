@@ -18,7 +18,7 @@ source("function.R")
 ui <- fluidPage(theme = shinytheme("superhero"),
 
     # Application title
-    titlePanel("Low Budget COVID-19 Dash"),
+    titlePanel("The 'Rona Digest [beta]"),
     h4(paste0("Updated as of ", Sys.Date())),
 
     # Sidebar 
