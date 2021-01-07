@@ -16,6 +16,8 @@ library(TTR)
 
 us_states <- readRDS("us_states.Rdata") 
 us_counties <- readRDS("us_counties.Rdata")
+country <- readRDS("country.Rdata")
+province <- readRDS("province.Rdata")
 covid_state <- readRDS("covid_state.Rdata")
 covid_county <- readRDS("covid_county.Rdata")
 international <- readRDS("international.Rdata")
